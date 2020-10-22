@@ -1,8 +1,11 @@
 #!/bin/bash
 
-HEADPHONES=$(pacmd list-sinks | grep -B1 'name: <alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo>' | sed '2D' | cut -c12)
-SPEAKERS=$(pacmd list-sinks | grep -B1 'name: <alsa_output.pci-0000_0e_00.4.analog-stereo>' | sed '2D' | cut -c12)
-SWAP=$(pacmd list-sinks | grep '\* index' | cut -c12)
+HEADPHONES=$(pacmd list-sinks | grep -B1 'name: <alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo>' | sed '2D' | cut -c12-)
+SPEAKERS=$(pacmd list-sinks | grep -B1 'name: <alsa_output.pci-0000_0e_00.4.analog-stereo>' | sed '2D' | cut -c12-)
+SWAP=$(pacmd list-sinks | grep '\* index' | cut -c12-)
+echo $HEADPHONES
+echo $SPEAKERS
+echo $SWAP
 if [ $SPEAKERS == $SWAP ]; then
     SINK=$HEADPHONES
 else
