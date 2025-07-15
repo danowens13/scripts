@@ -1,0 +1,17 @@
+#!/bin/bash
+#A script to toggle if my third mini monitor is active. Maintains the current orientation of the secondary monitor
+
+
+if [ $(xrandr --prop | grep 'HDMI-A-0' | cut -d ' ' -f 3) = "(normal" ]; then
+	if [ $(xrandr --prop | grep 'DisplayPort-2' | cut -d ' ' -f 4) = "left" ]; then
+		set3MonOrientationLeft
+	else
+		set3MonOrientationNormal
+	fi
+else
+	if [ $(xrandr --prop | grep 'DisplayPort-2' | cut -d ' ' -f 4) = "left" ]; then
+		set2MonOrientationLeft
+	else
+		set2MonOrientationNormal
+	fi
+fi

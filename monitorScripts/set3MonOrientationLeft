@@ -1,0 +1,13 @@
+#!/bin/bash
+
+source MonitorConfiguration
+
+primXrandr="--output $primMon --primary --mode 2560x1440 --pos 1080x240 --rotate normal --rate 144 --set TearFree on"
+secXrandr="--output $secMon --mode 1920x1080 --pos 0x0 --rotate left --rate 144 --set TearFree on" 
+miniXrandr="--output $miniMon --mode 1280x720 --pos 3640x1628 --rotate normal --set TearFree off"
+
+cp /home/dan/Pictures/wallpaper/3monleft.png /home/dan/Pictures/wallpaper/wall.png
+xrandr $primXrandr $secXrandr $miniXrandr
+sleep .5
+nitrogen --set-auto /home/dan/Pictures/wallpaper/3monleft.png
+xsetwacom set 'Wacom Intuos S Pen stylus' MapToOutput $primMon

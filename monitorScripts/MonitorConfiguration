@@ -1,0 +1,5 @@
+#!/bin/bash
+
+primMon="DisplayPort-0"
+secMon="DisplayPort-2"
+miniMon="HDMI-A-0"
