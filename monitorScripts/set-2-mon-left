@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source monitor-configuraion
+
+primXrandr="--output $primMon --primary --mode 2560x1440 --pos 1080x172 --rotate normal --rate 144 --set TearFree on"
+secXrandr="--output $secMon --mode 1920x1080 --pos 0x0 --rotate left --rate 144 --set TearFree on" 
+miniXrandr="--output $miniMon --off"
+
+xrandr $primXrandr $secXrandr $miniXrandr
+sleep .5
+set-wallpaper
