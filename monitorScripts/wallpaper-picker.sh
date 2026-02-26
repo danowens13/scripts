@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# If not running in a terminal, relaunch inside one
+if [ ! -t 1 ]; then
+    kitty -c sh "wallpaper-picker"
+    exit
+fi
+
 # Wallpaper Directory
 WALL_DIR="/home/dan/Pictures/wallpaper"
 
